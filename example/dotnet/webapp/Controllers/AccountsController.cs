@@ -22,4 +22,19 @@ namespace webapp.Controllers
             return AccountService.GetAccounts();
         }
     }
+    public class AccountController : ControllerBase
+    {
+        public AccountController(JsonFileAccountService accountService)
+        {
+            AccountService = accountService;
+        }
+
+        public JsonFileAccountService AccountService { get; }
+
+        [HttpGet]
+        public IEnumerable<Account> Get()
+        {
+            return AccountService.GetAccounts();
+        }
+    }
 }
