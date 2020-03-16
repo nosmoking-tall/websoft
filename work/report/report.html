@@ -130,43 +130,58 @@ Java and PHP also have ways to implement parallel requests (child threads), but 
 </p>
       <p class="ques">What is your TIL for this course section?</p>  
   <p class="answ">Today's lesson is quite interesting. We have an overview on different frameworks and languages. We compare several most popular language around the world and have a intuitive recognization on how they impace the whole development enviroment through data.</p>
-<p>
-    
-    
-    
-    </p>
+
 </section>
 
 <section>
 <h2>S07</h2>
     <p class="ques">Try to explain the platform .NET (C#, ASP.NET) to a skilled programmer, but newbie to this Microsoft technology.</p>  
-  <p class="answ"></p>
+  <p class="answ">
+  The core of .NET is .NET Framwork (.NET Framework) is an environment for .NET program development and running. Under this platform, you can develop in different languages. 
+  C# is a programming language under the .NET platform. A high-level language that runs on the .net CLR and is used to create applications. A programming language is a tool that facilitates communication between developers and computers.
+  ASP.NET is a website development technology, an application model in the .NET framework, used to generate a rich programming framework for Web-based applications. </p>
       <p class="ques">Elaborate by comparing .NET technologies with the other technologies we learned during the course.</p>  
-  <p class="answ"></p>
+  <p class="answ">The third time, I am comparing .NET with Java. For the enviroment and framework, .NET is the .NET Framework and Java is J2SE. .Net is quick to get started. In .Net, Microsoft provides developers with a set of optimal technical architecture and integrated development environment. The system developed with Microsoft's technical architecture can guarantee the best results, without using Java. However, the rise of ios and Android makes .NET applications on the mobile phone basically no market, and the rise of these mobile applications will inevitably make Java and Object C ++ hot, further aggravating .NET's decadence. </p>
       <p class="ques">Describe how you took on the coding exercise, what grade did you aim for and are you satisfied with the result?</p>  
-  <p class="answ"></p>
+  <p class="answ">I have learnt both java and C++ before, so I get familiar with C# quite rapidly. C# is very similar with java in many ways. With the previous practices and example of teachers, I solve the assignment easily.</p>
       <p class="ques">What is your TIL for this course section?</p>  
-  <p class="answ"></p>
-<p>
-    
-    
-    </p>
+
+  <p class="answ">I get a chance to learn about C#, ASP.net and .NET framework. Actually it's quite popular in China. Although Java still occupied the biggest market share, but I am optimized about the future of C#. I also master how to set up .net enviroment and related IDE. I write my first website based on MVC framework and know the principle and components of MVC, how they work with each other.</p>
+
 </section>
 
 <section>
 <h2>S08</h2>
-<p>Here is the text for this section.</p>
+<p class="ques"></p>
+<a href="https://docs.google.com/spreadsheets/d/178XMXzrmFbKjpOFMugBjvz8oZqaGzLIHnSCnCfx4_O8/edit?usp=sharing">4 Google Data sheet</a>
+<p class="answ">I compare the performances of three different search engines' index page. Baidu is the biggest search engine in China. Somehow, Lighthouse pagespeed can't test google for a period of time, luckily it works later. Results turn out to be quite interesting. Although Google has no resource at all, its performance is not as satisfied as I expect. Many kinds of test data like Time to Interactive, Max Potential First Input Delay, First Input Delay (FID) shows Google's index somehow perform worst among three search engines. I think one of biggest reason is different usage frequency and loading level of the server.(Everybody uses Google!). Look deeper in the details, we find scripting and idle is two most consuming part of producing delay. In China's Baidu engine, due to the far location of server, the idle time is so long that has exceed 5.5s. In the Network of Devtool, i find the reason of consuming such long time is loading 2 GIF, costing 2s each. Google's consuming time structure is like Baidu which also spend most time on loading gif, but Bing spend most time loading .aspx file.</p>
 </section>
 
 <section>
 <h2>S09</h2>
-<p>Here is the text for this section.</p>
+<p class="ques">Elaborate on a few (3-5) different security issues or concerns, from your own experience, related to web application security and relate them to the OWASP top ten.</p>
+<p class="answ">
+  I have really limited experience of dealing with security issues. So I do some research and conclude several most popular issues.
+  1.XSS (Cross-Site Scripting) is a cross-site scripting attack. Because abbreviations and CSS overlap, it can only be called XSS. A cross-site scripting attack is an attack performed by an illegal HTML tag or JavaScript running in the browser of a registered web site user with a security vulnerability.
+  2.SQL injection vulnerability (SQL Injection) is the most common type of security vulnerability in web development. You can use it to obtain sensitive information from the database, or use the characteristics of the database to perform a series of malicious operations such as adding users, exporting files, etc. It is even possible to obtain the highest permissions of the database and even system users.
+  3.Click hijacking is an attack method for visual deception. The attacker embeds the website that needs to be attacked by embedding it in their own webpage, sets the iframe to be transparent, and reveals a button in the page to induce the user to click.
+  4.The DDos attack is based on the DOS attack. It is easy to understand that dos is singled out and ddos is a group attack. Because of the development of modern technology, the lethality of the dos attack is reduced. So DDOS appeared. The attacker used a public network to combine a large number of computer equipment to attack one or more targets. From a technical perspective, DDoS attacks can be targeted at all layers of the network communication protocol. The methods are roughly: TCP-type SYN Flood, ACK Flood, Fraggle, Trinoo of UDP class, DNS Query Flood, ICMP Flood, Slowloris class and so on.
+  These are secure issues I often heard about. I never suffer an attack before, but only by reading their principle and codes, I can imagine the harmful results and serious situations it may cause.
+</p>
+<p class="ques">Summarize by providing your own guidelines to a new web programmer on the topic “The essential guidelines to follow to create secure web applications”.</p>
+<p class="answ">1. Don't trust any external incoming data, perform related format checking, filtering and other operations on user input, and handle escape characters. The most common way is to escape the content of the input and output. Escape the parentheses, angle brackets, and slashes.
+2. Use CSP content security policy.
+3. X-FRAME_OPRIONS (X-Frame-Options) This can be said to be born to solve ClickJacking. It is an HTTP response header. It has a better support in modern browsers. It is to prevent clicks nested with iframe Hijack attack. The response header has three values, which are:
+(1) DENY indicates that the page is not allowed to be displayed by iframe, (the browser will reject any iframe loaded by the current page)
+(2) SAMEORIGIN indicates that the page can be displayed in the iframe under the same domain name, (the address of the frame page can only be a page under the same domain name)
+(3) ALLOW-FROM indicates that the page can be displayed in the iframe of the specified source
+4. Block third-party websites from requesting interfaces, do not trust any incoming third-party data, use CORS, and set Access-Control-Allow-Origin.
+</p>
+<p class="ques">What is your TIL for this course section?</p>
+
+<p class="answ">Today I learned about the currently popular attack methods, principles and possible harms against web servers and websites. I didn't pay much attention to this before. After learning the importance of network security, I learned some techniques and methods to prevent these network attacks. I think that I must apply what I have learned in the development of commercial software in the future and be responsible for the customer's information security.</p>
 </section>
 
-<section>
-<h2>S10</h2>
-<p>Here is the text for this section.</p>
-</section>
 
 <footer>
     <hr>
